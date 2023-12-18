@@ -4,8 +4,11 @@ import java.io.*;
 import java.util.Scanner;
 
 public class HighscoreHandler {
+
     private static HighscoreHandler instance;
+
     File highscoreFile = new File("src/TextFiles/Highscore.txt");
+
     int currentHighscore;
 
     private HighscoreHandler(){
@@ -20,7 +23,6 @@ public class HighscoreHandler {
     public int getCurrentHighscore() {
         return currentHighscore;
     }
-
 
     public void compareScore(int score){
         if (score > currentHighscore){
