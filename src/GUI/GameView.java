@@ -69,6 +69,7 @@ public class GameView extends JPanel {
         }
         winLabel.setText("Wins: " + controller.getModel().getWins());
         lossLabel.setText("Losses: " + controller.getModel().getLosses());
+        controller.getModel().checkIfNewHighscore();
         messageLabel.setText(controller.getMessage().getText());
         this.revalidate();
         this.repaint();

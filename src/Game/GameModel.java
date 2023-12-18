@@ -12,6 +12,7 @@ public class GameModel {
     private GridComponent target;
     private int wins = 0;
     private int losses = 0;
+    public final HighscoreHandler highscoreHandler = HighscoreHandler.getInstance();
     public GameModel(){
         initializeGame();
     }
@@ -72,5 +73,9 @@ public class GameModel {
 
     public int getLosses() {
         return losses;
+    }
+    public void checkIfNewHighscore(){
+        int score = wins - losses;
+        highscoreHandler.compareScore(score);
     }
 }
