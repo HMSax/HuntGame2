@@ -36,7 +36,7 @@ public class GameView extends JPanel {
         topPanel = new JPanel(new BorderLayout());
 
         JPanel scorePanel = new JPanel(new FlowLayout());
-        highscoreLabel.setText("Higscore: " +controller.getModel().getHighscoreHandler().getCurrentHighscore());
+        highscoreLabel.setText("Highscore: " +controller.getModel().getHighscoreHandler().getCurrentHighscore());
         scorePanel.add(winLabel);
         scorePanel.add(lossLabel);
         scorePanel.add(highscoreLabel);
@@ -72,7 +72,7 @@ public class GameView extends JPanel {
         }
         winLabel.setText("Wins: " + controller.getModel().getWins());
         lossLabel.setText("Losses: " + controller.getModel().getLosses());
-        highscoreLabel.setText("Higscore: " +controller.getModel().getHighscoreHandler().getCurrentHighscore());
+        highscoreLabel.setText("Highscore: " +controller.getModel().getHighscoreHandler().getCurrentHighscore());
         controller.getModel().checkIfNewHighscore();
         messageLabel.setText(controller.getMessage().getText());
         this.revalidate();
