@@ -7,6 +7,7 @@ import java.awt.*;
 
 public class GameView extends JPanel {
     private ImageIcon backgroundImage;
+    private final MapHandler mapHandler = new MapHandler();
     private JPanel gamePanel;
     private JPanel topPanel;
     private final JLabel backgroundLabel  = new JLabel();
@@ -14,23 +15,23 @@ public class GameView extends JPanel {
     private final JLabel winLabel = new JLabel("Wins: 0");
     private final JLabel lossLabel = new JLabel("Losses: 0");
     private final MainFrame mainFrame;
-    private final MapHandler mapHandler = new MapHandler();
     private final GameController controller;
 
 
     public GameView (MainFrame mainFrame){
         this.controller = new GameController(this);
         this.mainFrame = mainFrame;
+
         setSize(615, 685);
         setVisible(true);
         setLayout(new BorderLayout());
         this.setFocusable(true);
+
         gamePanel = new JPanel();
         setMap();
         backgroundLabel.setIcon(backgroundImage);
         backgroundLabel.setLayout(new GridLayout(10, 10));
         gamePanel.add(backgroundLabel);
-
         topPanel = new JPanel(new BorderLayout());
 
         JPanel scorePanel = new JPanel(new FlowLayout());
@@ -46,6 +47,7 @@ public class GameView extends JPanel {
         backgroundLabel.removeAll();
         backgroundLabel.setLayout(new GridLayout(10, 10));
         String onIndex;
+
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard.length; j++) {
                 onIndex = gameBoard[i][j];
