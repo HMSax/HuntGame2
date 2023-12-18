@@ -9,7 +9,7 @@ public class HighscoreHandler {
 
     private final File highscoreFile = new File("src/TextFiles/Highscore.txt");
 
-    int currentHighscore;
+    private int currentHighscore;
 
     private HighscoreHandler(){
         currentHighscore = getScoreFromFile();
