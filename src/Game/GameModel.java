@@ -59,6 +59,10 @@ public class GameModel {
         return gameBoard.getGameBoard();
     }
 
+    public HighscoreHandler getHighscoreHandler() {
+        return highscoreHandler;
+    }
+
     public GridComponent getHunter() {
         return hunter;
     }
