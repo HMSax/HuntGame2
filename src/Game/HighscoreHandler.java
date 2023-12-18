@@ -7,7 +7,7 @@ public class HighscoreHandler {
 
     private static HighscoreHandler instance;
 
-    File highscoreFile = new File("src/TextFiles/Highscore.txt");
+    private final File highscoreFile = new File("src/TextFiles/Highscore.txt");
 
     int currentHighscore;
 
