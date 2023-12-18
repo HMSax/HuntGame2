@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameView extends JPanel {
-    private final ImageIcon backgroundImage = new ImageIcon("src/IconImages/map2.jpg");
+    private ImageIcon backgroundImage;
     private JPanel gamePanel;
     private JPanel topPanel;
     private final JLabel backgroundLabel  = new JLabel();
@@ -14,6 +14,7 @@ public class GameView extends JPanel {
     private final JLabel winLabel = new JLabel("Wins: 0");
     private final JLabel lossLabel = new JLabel("Losses: 0");
     private final MainFrame mainFrame;
+    private final MapHandler mapHandler = new MapHandler();
     private final GameController controller;
 
 
@@ -25,6 +26,7 @@ public class GameView extends JPanel {
         setLayout(new BorderLayout());
         this.setFocusable(true);
         gamePanel = new JPanel();
+        setMap();
         backgroundLabel.setIcon(backgroundImage);
         backgroundLabel.setLayout(new GridLayout(10, 10));
         gamePanel.add(backgroundLabel);
@@ -68,6 +70,9 @@ public class GameView extends JPanel {
         messageLabel.setText(controller.getMessage().getText());
         this.revalidate();
         this.repaint();
+    }
+    public void setMap(){
+        backgroundImage = mapHandler.getNewMap();
     }
 
     public void showMainMenu(){
