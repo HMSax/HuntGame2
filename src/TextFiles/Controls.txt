@@ -1,4 +1,4 @@
  Movement:
- *To move the hunter, press the A, S, D, or W key.
- *To move the target, the game will randomly move it around the board.
+ *To move Hunter, press the A, S, D, or W key.
+ *Target randomly moves in any direction. Target moves after Player.
  *Highscore is calculated as your wins minus your losses.
