@@ -7,4 +7,4 @@
  HuntGame offers a seamless and visually engaging user interface.
 
  Developers: [Martin, Ninib, Mattias, Pejman]
- Version: [1.1.0]
+ Version: [1.2.0]
