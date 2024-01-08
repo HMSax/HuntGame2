@@ -78,6 +78,37 @@ public class GameView extends JPanel {
         this.revalidate();
         this.repaint();
     }
+    public void updateHunterView(String[][] gameBoard, GameController controller) {
+        backgroundLabel.removeAll();
+        backgroundLabel.setLayout(new GridLayout(10, 10));
+        String onIndex;
+
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard.length; j++) {
+                onIndex = gameBoard[i][j];
+                JButton button = new JButton();
+                if (onIndex.equals( controller.getModel().getHunter().getCharMark())){
+                    button.setIcon(controller.getModel().getHunter().getIcon());
+                    backgroundLabel.add(button);
+                } else {
+                    button.setVisible(false);
+                }
+                button.setOpaque(true);
+                button.setBorderPainted(true);
+                button.setFocusPainted(false);
+                button.setContentAreaFilled(true);
+                button.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+                backgroundLabel.add(button);
+            }
+        }
+        winLabel.setText("Wins: " + controller.getModel().getWins());
+        lossLabel.setText("Losses: " + controller.getModel().getLosses());
+        highscoreLabel.setText("Highscore: " +controller.getModel().getHighscoreHandler().getCurrentHighscore());
+        controller.getModel().checkIfNewHighscore();
+        messageLabel.setText(controller.getMessage().getText());
+        this.revalidate();
+        this.repaint();
+    }
     public void setMap(){
         backgroundImage = mapHandler.getNewMap();
     }

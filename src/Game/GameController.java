@@ -56,6 +56,7 @@
                             } else {
                                 model.moveTarget();
                                 model.getMessage().howTo();
+                                view.updateHunterView(model.getGameBoard(), GameController.this);
                                 view.updateView(model.getGameBoard(), GameController.this);
                             } if (model.checkLose()) {
                                 model.getMessage().loser();
